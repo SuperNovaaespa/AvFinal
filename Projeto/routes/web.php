@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/criar', [ClienteController::class, 'create'])->name('cadastrar_cliente');
+
+Route::post('/criar', [ClienteController::class, 'store'])->name('cadastrar_cliente');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
